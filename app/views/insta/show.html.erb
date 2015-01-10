@@ -1,0 +1,6 @@
+<h1>Insta#show</h1>
+<p>Find me in app/views/insta/show.html.erb</p>
+
+    <% @images.each do |i|%>
+        <a href="<%= i.link %>" target="_blank" title="#"><img src="<%= i.images.thumbnail.url %>"></a>
+      <% end %> 

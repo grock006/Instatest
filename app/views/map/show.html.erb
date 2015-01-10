@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View containers</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        z-index: 5;
+        background-color: #fff;
+        border: 2px solid #999;
+        opacity: 0.6;
+      }
+        #panel_two {
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        z-index: 5;
+        background-color: #fff;
+        border: 2px solid #999;
+        opacity: 0.6;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyH6_rxueEsjg0nKXAN23lhziVfY1rirU"></script>
+    <script>
+function initialize() {
+  var yosemite = new google.maps.LatLng(<%= @lat %>,<%= @long %>);
+  var panoramaOptions = {
+    position: yosemite,
+    pov: {
+      heading: 90,
+      pitch: 0
+    },
+    zoom: 0
+  };
+  var myPano = new google.maps.StreetViewPanorama(
+      document.getElementById('map-canvas'),
+      panoramaOptions);
+  myPano.setVisible(true);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+  	<div id="panel">
+        <% @images.each do |i|%>
+        <a href="<%= i.link %>" target="_blank" title="#"><img src="<%= i.images.thumbnail.url %>" style="width:50%"></a>
+      <% end %> 
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
