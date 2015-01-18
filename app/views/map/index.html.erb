@@ -26,9 +26,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyH6_rxueEsjg0nKXAN23lhziVfY1rirU"></script>
     <script>
 function initialize() {
-  var yosemite = new google.maps.LatLng(<%= @lat %>,<%= @lng %>);
+  var map = new google.maps.LatLng(<%= @lat %>,<%= @lng %>);
   var panoramaOptions = {
-    position: yosemite,
+    position: map,
     pov: {
       heading: 90,
       pitch: 0
@@ -39,20 +39,13 @@ function initialize() {
       document.getElementById('map-canvas'),
       panoramaOptions);
   myPano.setVisible(true);
-}
+  }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
   </head>
   <body>
-  	<div id="panel">
-  		 <form action="/map/show" role="search" >
-               <input placeholder="Enter Address, City, State" type="text" name="address" style="width:75%"/>
-               <br>
-          <button type="submit">Search</button>
-       </form>
-    </div>
     <div id="map-canvas"></div>
   </body>
 </html>

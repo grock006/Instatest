@@ -23,10 +23,17 @@ class MapController < ApplicationController
     @image_six = @images[5]
 
     #Twitter
-    @tweets = $twitter.search("*", geocode: "#{@lat},#{@lng},1mi", lang: "en").take(3)
-    @tweet_one = @tweets[0]
-    @tweet_two = @tweets[1]
-    @tweet_three = @tweets[2]
+    @tweets = $twitter.search("*", geocode: "#{@lat},#{@lng},10mi", lang: "en").take(3)    
+    
+    if @tweets[2].text != nil
+        @tweet_one = @tweets[2]
+      else
+        @tweet_one = @tweets[3]
+    end
+
+    @tweet_two = $twitter.search("*", geocode: "#{@lat},#{@lng},10mi", lang: "en").take(1)
+
+
   end
 
 end
