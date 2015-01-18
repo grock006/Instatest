@@ -1,3 +1,9 @@
+$instagram-panel-padding: 5px;
+$panel-shadow: 5px 5px 2px #323232;
+$border-color: #323232;
+$instagram-panel-width: 140px;
+$twitter-panel-width: 300px;
+
 html, body, #map-canvas {
     height: 100%;
     margin: 0px;
@@ -32,10 +38,10 @@ button.btn-search  {
 }
 
 img.main {
-    width:150px;
+    width:100px;
 }
 img.profile {
-    width: 20%;
+    width: 10%;
 }
 
 .navbar {
@@ -43,8 +49,10 @@ img.profile {
 }
 p {
     margin: 0;
-    width: 300px;
+    width: 100%;
     padding: 0px;
+    padding-top: 5px;
+    font-size: 12px;
 }
 
 p a {
@@ -93,9 +101,11 @@ h5 {
     left: 10%;
     z-index: 5;
     background-color: #fff;
-    border: 1px solid #e6e6e6;
+    border: 1px solid $border-color;
     opacity: 0.8;
-    padding: 10px;
+    padding: $instagram-panel-padding;
+    box-shadow: $panel-shadow;
+    width: $instagram-panel-width;
 }
 .panel-2 {
     position: absolute;
@@ -103,37 +113,46 @@ h5 {
     left: 78%;
     z-index: 5;
     background-color: #fff;
-    border: 2px solid #999;
+    border: 2px solid $border-color;
     opacity: 0.8;
-    padding: 10px;
+   padding: $instagram-panel-padding;
+   box-shadow: $panel-shadow;
+   width: $instagram-panel-width;
 }
 .panel-3 {
     position: absolute;
     top: 20%;
     left: 80%;
     z-index: 6;
-    border: 2px solid #999;
+    border: 2px solid $border-color;
     opacity: 0.8;
-    padding: 10px;
+   padding: $instagram-panel-padding;
+   box-shadow: $panel-shadow;
+   width: $instagram-panel-width;
 }
 .panel-4 {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 10%;
     z-index: 5;
     background-color: #fff;
     border: 1px solid #e6e6e6;
     opacity: 0.8;
-    padding: 10px;
+    padding: $instagram-panel-padding;
+    box-shadow: $panel-shadow;
+    width: $instagram-panel-width;
 }
 .panel-5 {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 72%;
     z-index: 5;
     background-color: #fff;
-    border: 2px solid #999;
+    border: 2px solid $border-color;
     opacity: 0.8;
+   padding: $instagram-panel-padding;
+   box-shadow: $panel-shadow;
+   width: $instagram-panel-width;
 }
 .panel-6 {
     position: absolute;
@@ -141,34 +160,38 @@ h5 {
     left: 80%;
     z-index: 5;
     background-color: #fff;
-    border: 2px solid #999;
-    opacity: 0.7;
+    border: 2px solid $border-color;
+   padding: $instagram-panel-padding;
+   box-shadow: $panel-shadow;
+   width: $instagram-panel-width;
 }
 .panel-7 {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 45%;
     z-index: 8;
     background-color: #fff;
-    border: 2px solid #999;
+    border: 2px solid #323232;
     opacity: 0.8;
-    width: 400px;
+    width: 300px;
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: 5px 5px 2px #999;
+   padding: 10px 10px 5px 10px;
+      box-shadow: $panel-shadow;
+      width: $twitter-panel-width;
 }
 .panel-8 {
     position: absolute;
     top: 10%;
-    left: 40%;
+    left: 20%;
     z-index: 5;
     background-color: #fff;
     border: 2px solid #323232;
     border-radius: 10px;
     opacity: 0.8;
-    width: 400px;
+    width: 300px;
     padding: 10px 10px 5px 10px;
-    box-shadow: 5px 5px 2px #323232;
+    box-shadow: $panel-shadow;
+    width: $twitter-panel-width;
 }
 
      

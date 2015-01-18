@@ -15,7 +15,9 @@
         var mapOptions = {
           center: yosemite,
           zoom: 18,
-          streetViewControl: true
+          addressControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM
+        }
         };
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
@@ -45,22 +47,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
   	
 
     <div class="panel-1">
-      <div class="outline">
-        <i class="fa fa-instagram fa-lg" style="float:right; padding: 5px;"></i>
-        <div class="inner">
+        <i class="fa fa-instagram fa-lg" style="float:right"></i>
         <a href="<%= @image_one.link %>" target="_blank" title="#"><img class="main" src="<%= @image_one.images.thumbnail.url %>">
           <h4>
             <img class="profile" src="<%= @image_one.user.profile_picture %>">  
             <%= @image_one.user.username%>
           </h4>
         </a>
-      </div>
-      </div>
-      <button class="btn btn-default btn-sm" style="float:right;"><i class="fa fa-star-o"></i></button>
+      <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
     </div>
 
+
     <div class="panel-2">
-      <i class="fa fa-instagram fa-lg" style="float:right; padding: 5px;"></i>
+      <i class="fa fa-instagram fa-lg" style="float:right;"></i>
         <a href="<%= @image_two.link %>" target="_blank" title="#">
           <img src="<%= @image_two.images.thumbnail.url %>" class="main">       
         <h4>
@@ -71,31 +70,42 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
 
- 
-<!--     <div class="panel-3">
-        <a href="<%= @image_three.link %>" target="_blank" title="#"><img src="<%= @image_three.images.thumbnail.url %>" style="width:100%"></a>
-    </div> -->
 
     <div class="panel-4">
-      <div class="outline">
-           <i class="fa fa-instagram fa-lg" style="float:right; padding: 5px;"></i>
-        <div class="inner">
-        <a href="<%= @image_four.link %>" target="_blank" title="#"><img src="<%= @image_four.images.thumbnail.url %>" style="width:100%">
+      <i class="fa fa-instagram fa-lg" style="float:right;"></i>
+        <a href="<%= @image_four.link %>" target="_blank" title="#"><img src="<%= @image_four.images.thumbnail.url %>" class="main">
             <h4>
-            <img class="profile" src="<%= @image_four.user.profile_picture %>">  
-            <%= @image_one.user.username%>
+            <img class="profile" src="<%= @image_four.user.profile_picture %>" class="profile">  
+            <%= @image_four.user.username%>
           </h4>
         </a>
-      </div>
-    </div>
+        <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
     </div>
 
+
+
     <div class="panel-5">
-        <a href="<%= @image_five.link %>" target="_blank" title="#"><img src="<%= @image_five.images.thumbnail.url %>" style="width:100%"></a>
+          <i class="fa fa-instagram fa-lg" style="float:right;"></i>
+        <a href="<%= @image_five.link %>" target="_blank" title="#"><img src="<%= @image_five.images.thumbnail.url %>" class="main">
+           <h4>
+            <img class="profile" src="<%= @image_five.user.profile_picture %>" class="profile">  
+            <%= @image_five.user.username%>
+          </h4>
+        </a>
+        <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
     
+
+
     <div class="panel-6">
-        <a href="<%= @image_six.link %>" target="_blank" title="#"><img src="<%= @image_six.images.thumbnail.url %>" style="width:100%"></a>
+          <i class="fa fa-instagram fa-lg" style="float:right;"></i>
+        <a href="<%= @image_six.link %>" target="_blank" title="#"><img src="<%= @image_six.images.thumbnail.url %>" class="main">
+           <h4>
+            <img class="profile" src="<%= @image_six.user.profile_picture %>" class="profile">  
+            <%= @image_six.user.username%>
+          </h4>
+        </a>
+        <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
     
     <!-- Tweets -->
@@ -103,18 +113,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <% @tweet_two.each do |t| %>
       <% unless t.text == nil%>
      <div class="panel-7">
+         <i class="fa fa-twitter fa-lg" style="float:right"></i>
         <ul class="media-list">
             <li class="media">
               <a class="media-left" href="#" title="#">
                 <img src="<%= t.user.profile_image_url %>" alt="">
               </a>
               <div class="media-body">
-                
-                <h5 class="media-heading"><%= t.user.name %>      <i class="fa fa-twitter fa-lg"></i></h5>
-                
+                <h5 class="media-heading"><%= t.user.name %></h5>
                 <h5> <a href="http://www.twitter.com/<%= t.user.screen_name %>">
                 @<%= t.user.screen_name %></a></h5>
-                
                 <p>
                   <a href="http://www.twitter.com/<%= t.user.screen_name %>/status/<%= t.id %>">
                   <%= t.text %>
@@ -123,6 +131,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
               </div>
             </li>
           </ul>
+              <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
      <% end %>
      <% end %>
@@ -131,18 +140,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
      <div class="panel-8">
+        <i class="fa fa-twitter fa-lg" style="float:right"></i>
         <ul class="media-list">
             <li class="media">
               <a class="media-left" href="#" title="#">
                 <img src="<%= @tweet_one.user.profile_image_url %>" alt="">
               </a>
               <div class="media-body">
-                
-                <h5 class="media-heading"><%= @tweet_one.user.name %>      <i class="fa fa-twitter fa-lg"></i></h5>
-                
+                <h5 class="media-heading"><%= @tweet_one.user.name %> </h5>
                 <h5> <a href="http://www.twitter.com/<%= @tweet_one.user.screen_name %>">
                 @<%= @tweet_one.user.screen_name %></a></h5>
-                
                 <p>
                   <a href="http://www.twitter.com/<%= @tweet_one.user.screen_name %>/status/<%= @tweet_one.id %>">
                   <%= @tweet_one.text %>
@@ -154,6 +161,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
     
+
+
+
+
   
      <div id="panel-toggle" style="margin-left:-100px">
       <button type="button" value="Toggle Street View" onclick="toggleStreetView();" class="btn btn-default btn-search">Toggle Map View</button>

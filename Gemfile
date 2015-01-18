@@ -30,6 +30,8 @@ gem 'geokit'
 gem 'twitter'
 #mongoid
 gem 'mongoid'
+#
+gem 'yelp'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
