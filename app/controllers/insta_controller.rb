@@ -21,14 +21,20 @@ class InstaController < ApplicationController
     #                         token_secret: "SBQtXi682Ce-niYRmGR2jNkqCAA"
     #                       })
 
-    coordinates = { latitude: 37.745795, longitude: -119.590411 }
+ 
     # @y = $y.search_by_coordinates({ latitude: 37.7577, longitude: -122.4376 })
     # @yelp = $y.search('San Francisco')
 
     ## search
+    coordinates = { latitude: 37.745795, longitude: -119.590411 }
+    
+    if $y.search_by_coordinates(coordinates)
     @response = $y.search_by_coordinates(coordinates)
-
+    
     @yelp = @response.businesses.take(3)
+    end
+
+    
     # [<Business 1>, <Business 2>, ...]
 
     #@yelp = @ya[0].name
@@ -53,9 +59,9 @@ class InstaController < ApplicationController
 
     @x = $twitter.search("*", geocode: "#{@lat},#{@lng},1mi", lang: "en").take(5)
 
-    coordinates = { latitude: @lat, longitude: @lng }
-    @response = $y.search_by_coordinates(coordinates)
-    @yelp = @response.businesses.take(3)
+    #coordinates = { latitude: @lat, longitude: @lng }
+    #@response = $y.search_by_coordinates(coordinates) 
+    #@yelp = @response.businesses.take(3)
 
     #@div_test = [ 1, 2, 3]
 

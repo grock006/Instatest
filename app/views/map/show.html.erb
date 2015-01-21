@@ -137,8 +137,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
      <% end %>
 
 
-
-
      <div class="panel-8">
         <i class="fa fa-twitter fa-lg" style="float:right"></i>
         <ul class="media-list">
@@ -161,8 +159,34 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
      </div>
     
+<!-- Yelp -->
 
-
+      <div class="panel-9">
+        <i class="fa fa-yelp fa-lg" style="float:right"></i>
+        <ul class="media-list">
+            <li class="media">  
+            <% @yelp.each do |i|%>
+            <% unless @yelp == nil %>
+              <a class="media-left" href="#" title="#">
+                  <img src="<%= i.image_url %>">
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">
+                <a href="<%= i.url %>"><%= i.name %></a>
+              </h5>
+                <p>
+                  <%= i.location.display_address[0] %><br>
+                  <%= i.categories[0][0] %><br>
+                  <img src="<%= i.rating_img_url %>"><br>
+                </p>
+              </div>
+                  <% end %>
+                 <% end %>
+            </li>
+          </ul>
+              <button class="btn btn-default btn-sm" style="float:right;">Save <i class="fa fa-star-o"></i></button>
+     </div>
+     
 
 
   

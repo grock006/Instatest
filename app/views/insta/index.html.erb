@@ -36,6 +36,8 @@ Source: <%= tweet.source %><br>
 <h1>Cats</h1>
 
 <h1>Yelp Info:</h1>
+
+
 <% @yelp.each do |i|%>
 <a href="<%= i.url %>"><%= i.name %></a>
 <br>
@@ -45,6 +47,7 @@ Source: <%= tweet.source %><br>
 <img src="<%= i.rating_img_url_small %>"><br>
 <br>
 <% end %>
+
 
 
 
