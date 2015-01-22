@@ -37,11 +37,8 @@ class MapController < ApplicationController
     #Yelp
     coordinates = { latitude: @lat, longitude: @lng }
     @response = $y.search_by_coordinates(coordinates)
-    if coordinates == nil
-      redirect_to "/map"
-    else
     @yelp = @response.businesses.take(1)
-    end
+  
   end
 
   end

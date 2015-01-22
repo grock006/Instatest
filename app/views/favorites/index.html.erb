@@ -1,0 +1,34 @@
+<h1>Greg's Favorites</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+
+
+<% @favorites.each do |f|%>
+<div class="panel-favorite">
+        <i class="fa fa-instagram fa-lg" style="float:right"></i>
+        <a href="#" target="_blank" title="#"><img class="main" src="<%= f.main_url %>">
+          <h4>
+            <img class="profile" src="<%= f.profile_url %>">  
+            <%= f.name%>
+          </h4>
+        </a>
+     <%= link_to 'X', f, method: :delete %></td>
+     </button>
+    </div>
+    <% end %>
+
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>

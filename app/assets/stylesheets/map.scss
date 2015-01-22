@@ -98,6 +98,15 @@ h5 {
     transform: rotateY(40deg);
     background-color: #fff;
 }
+.panel-favorite {
+    z-index: 5;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    opacity: 0.8;
+    padding: $instagram-panel-padding;
+    box-shadow: $panel-shadow;
+    width: $instagram-panel-width;
+}
 
 .panel-1 {
     position: absolute;

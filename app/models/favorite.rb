@@ -5,4 +5,5 @@ class Favorite
   field :profile_url, type: String
   field :main_url, type: String
   field :text, type: String
+  belongs_to :user 
 end
