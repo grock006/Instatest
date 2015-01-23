@@ -6,5 +6,15 @@ class Favorite
   field :main_url, type: String
   field :text, type: String
   field :icon, type: String
+  field :latitude, type: Float
+  field :longitude, type: Float
   belongs_to :user 
+
+  def convert_location
+  	lat = latitude.to_s
+  	lng = longitude.to_s
+  	result = lat + "," + lng
+  	@a = Geokit::Geocoders::GoogleGeocoder.geocode result
+  	return @a.full_address
+  end
 end

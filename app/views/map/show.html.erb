@@ -51,14 +51,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <a href="<%= @image_one.link %>" target="_blank" title="#"><img class="main" src="<%= @image_one.images.thumbnail.url %>">
           <h4>
             <img class="profile" src="<%= @image_one.user.profile_picture %>">  
-            
-            <!-- <input type="hidden" name="name" value="<%= @image_one.user.username%>">
-            <input type="hidden" name="main_url" value="<%= @image_one.images.thumbnail.url%>">
-            <input type="hidden" name="profile_url" value="<%= @image_one.user.profile_picture%>"> -->
             <%= f.hidden_field :name, value: @image_one.user.username %>
             <%= f.hidden_field :main_url, value: @image_one.images.thumbnail.url %>
             <%= f.hidden_field :profile_url, value: @image_one.user.profile_picture %>
             <%= f.hidden_field :icon, value: "fa-instagram" %>
+            <%= f.hidden_field :latitude, value: @lat %>
+            <%= f.hidden_field :longitude, value: @lng %>
+
             
             <%= @image_one.user.username%>
           </h4>
@@ -79,6 +78,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <%= f.hidden_field :main_url, value: @image_two.images.thumbnail.url %>
             <%= f.hidden_field :profile_url, value: @image_two.user.profile_picture %>
             <%= f.hidden_field :icon, value: "fa-instagram" %>
+            <%= f.hidden_field :latitude, value: @lat %>
+            <%= f.hidden_field :longitude, value: @lng %>
 
           <%= @image_one.user.username%>
         </h4>
@@ -98,6 +99,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                <%= f.hidden_field :main_url, value: @image_four.images.thumbnail.url %>
               <%= f.hidden_field :profile_url, value: @image_four.user.profile_picture %>
               <%= f.hidden_field :icon, value: "fa-instagram" %>
+            <%= f.hidden_field :latitude, value: @lat %>
+            <%= f.hidden_field :longitude, value: @lng %>
 
             <%= @image_four.user.username%>
           </h4>
@@ -117,6 +120,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <%= f.hidden_field :main_url, value: @image_five.images.thumbnail.url %>
               <%= f.hidden_field :profile_url, value: @image_five.user.profile_picture %>
               <%= f.hidden_field :icon, value: "fa-instagram" %>
+              <%= f.hidden_field :latitude, value: @lat %>
+              <%= f.hidden_field :longitude, value: @lng %>
 
             <%= @image_five.user.username%>
           </h4>
@@ -134,7 +139,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
               <%= f.hidden_field :name, value: @image_six.username %>
               <%= f.hidden_field :main_url, value: @image_six.images.thumbnail.url %>
               <%= f.hidden_field :profile_url, value: @image_six.user.profile_picture %>
-                   <%= f.hidden_field :icon, value: "fa-instagram" %>
+              <%= f.hidden_field :icon, value: "fa-instagram" %>
+              <%= f.hidden_field :latitude, value: @lat %>
+              <%= f.hidden_field :longitude, value: @lng %>
 
             <%= @image_six.user.username%>
           </h4>
@@ -160,7 +167,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <%= f.hidden_field :username, value: @tweet_one.user.screen_name %>
                     <%= f.hidden_field :profile_url, value: @tweet_one.user.profile_image_url %>
                     <%= f.hidden_field :text, value: @tweet_one.text %>
-                         <%= f.hidden_field :icon, value: "fa-twitter" %>
+                    <%= f.hidden_field :icon, value: "fa-twitter" %>
+                    <%= f.hidden_field :latitude, value: @lat %>
+                    <%= f.hidden_field :longitude, value: @lng %>
 
 
                 @<%= @tweet_one.user.screen_name %></a></h5>
@@ -193,6 +202,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <%= f.hidden_field :profile_url, value: @tweet_two.user.profile_image_url %>
                     <%= f.hidden_field :text, value: @tweet_two.text %>
                     <%= f.hidden_field :icon, value: "fa-twitter" %>
+                    <%= f.hidden_field :latitude, value: @lat %>
+                    <%= f.hidden_field :longitude, value: @lng %>
 
 
                 @<%= @tweet_one.user.screen_name %></a></h5>
@@ -228,9 +239,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   <img src="<%= @yelp_one.rating_img_url %>"><br>
                     <%= f.hidden_field :name, value: @yelp_one.name %>
                     <%= f.hidden_field :profile_url, value: @yelp_one.image_url %>
-                    <%= f.hidden_field :main_url, value: @yelp_one.rating_image_url %>
+                    <%= f.hidden_field :main_url, value: @yelp_one.rating_img_url %>
                     <%= f.hidden_field :text, value: @yelp_one.location.display_address[0] %>
                     <%= f.hidden_field :icon, value: "fa-yelp" %>
+                    <%= f.hidden_field :latitude, value: @lat %>
+                    <%= f.hidden_field :longitude, value: @lng %>
 
                 </p>
               </div>
@@ -259,9 +272,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   <img src="<%= @yelp_two.rating_img_url %>"><br>
                     <%= f.hidden_field :name, value: @yelp_two.name %>
                     <%= f.hidden_field :profile_url, value: @yelp_two.image_url %>
-                    <%= f.hidden_field :main_url, value: @yelp_one.rating_image_url %>
+                    <%= f.hidden_field :main_url, value: @yelp_two.rating_img_url %>
                     <%= f.hidden_field :text, value: @yelp_two.location.display_address[0] %>
                     <%= f.hidden_field :icon, value: "fa-yelp" %>
+                    <%= f.hidden_field :latitude, value: @lat %>
+                    <%= f.hidden_field :longitude, value: @lng %>
                 </p>
               </div>
             </li>

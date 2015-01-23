@@ -12,6 +12,8 @@ class MapController < ApplicationController
     @search = @search_field.to_i
 
     # Passes address into the Geokit gem
+    # @latlng = "37.739624, -119.576333"
+    # Geokit::Geocoders::GoogleGeocoder.geocode @latlng
     @a = Geokit::Geocoders::GoogleGeocoder.geocode @address
 
     # Translates geokit address into latitude and longitude and passes them into latitude and longtidue
