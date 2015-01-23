@@ -70,6 +70,10 @@ h5 {
     margin: 0px;
 }
 
+.fa-star-o:hover {
+    color: yellow;
+}
+
 .navbar-inverse .navbar-brand {
     color: white;
 }
@@ -98,14 +102,13 @@ h5 {
     transform: rotateY(40deg);
     background-color: #fff;
 }
-.panel-favorite {
-    z-index: 5;
+.panel-favorites {
     background-color: #fff;
     border: 1px solid $border-color;
     opacity: 0.8;
     padding: $instagram-panel-padding;
     box-shadow: $panel-shadow;
-    width: $instagram-panel-width;
+    border: 1px solid $border-color;
 }
 
 .panel-1 {
@@ -220,4 +223,19 @@ h5 {
     box-shadow: $panel-shadow;
     width: $twitter-panel-width;
 }
+.panel-10 {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    border: 2px solid #323232;
+    border-radius: 10px;
+    opacity: 0.8;
+    width: 300px;
+    padding: 10px 10px 5px 10px;
+    box-shadow: $panel-shadow;
+    width: $twitter-panel-width;
+}
+
      
